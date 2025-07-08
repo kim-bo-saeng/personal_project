@@ -1,4 +1,4 @@
-# 📄 app.py
+# 📄 DQM_app.py
 import streamlit as st
 from dotenv import load_dotenv
 import pandas as pd
