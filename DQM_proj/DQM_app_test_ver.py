@@ -24,7 +24,7 @@ class GraphState(TypedDict):
     answer: Annotated[str, "answer"]
 
 # ✅ AI 모델 설정
-llm = ChatOpenAI(model="gpt-3.5-turbo", temperature=0)
+llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)
 
 # ✅ LangGraph 정의
 workflow = StateGraph(GraphState)
@@ -77,11 +77,11 @@ if uploaded_file:
             ]
             for task in analysis_tasks:
                 prompt = f"""
-테이블 설명: {table_description}
-컬럼 목록: {list(df.columns)}
-기능: {task}
-해당 기능과 관련성이 높은 컬럼 리스트와 간단한 이유를 알려줘. 너무 자세하지 않게 간결히 설명해줘.
-"""
+                            테이블 설명: {table_description}
+                            컬럼 목록: {list(df.columns)}
+                            기능: {task}
+                            해당 기능과 관련성이 높은 컬럼 리스트와 간단한 이유를 알려줘. 너무 자세하지 않게 간결히 설명해줘.
+                          """
                 response = llm.invoke([HumanMessage(content=prompt)])
                 st.session_state['function_column_analysis'][task] = response.content
 
