@@ -109,7 +109,7 @@ if uploaded_file:
             "1) 비정상 데이터 탐지 기능",
             "2) 데이터 결측값 자동 보정 기능",
             "3) 구조(Meta) 결측값 자동 보정 기능",
-            "4) 도메인/코드 표준 자동 수정 기능 (기존 기능)"
+            "4) 도메인/코드 표준 자동 수정 기능 (구현 기능)"
         ], key="analysis_selectbox")
 
     selected_columns = st.multiselect("📌 분석할 컬럼을 선택하세요:", options=df.columns)
